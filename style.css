@@ -4,20 +4,45 @@
     box-sizing: border-box;
 }
 
+/*===============
+   Sections
+================*/
+
 body {
     margin: 0 auto;
-    background: #3A69D2;
     color: #ffffff;
-    width: 550px;
-    
+    background: #293649;  
 }
 
+.invoice-container {
+    width: 550px;
+    margin: 0 auto; 
+}
+
+header {
+    background: #3A69D2; 
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    margin-top: 38px;
+    padding-top: 60px;
+    padding-bottom: 55px;
+}
+
+.container {
+    background: #1F2937;
+    width: 550px;
+    padding: 38px;
+    display: inline-block;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    margin-bottom: 38px;
+}
 
 /*===============
    Typography
 ================*/
 
-h1, h3, h4, p, button {
+h1,h2, h3, h4, p, span, button {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     text-align: center;
@@ -25,10 +50,20 @@ h1, h3, h4, p, button {
     color: #FFFFFF;
 }
 
+header > h1, p {
+    margin: 5px;
+}
+
 h1 {
     font-weight: 800;
     font-size: 40px;
     line-height: 40px;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
 }
 
 h3 {
@@ -52,37 +87,17 @@ p {
     line-height: 28px;
 }
 
-/*================
-       Header
-================*/
-
-header > h1 {
-    margin-top: 70px;
-    margin-bottom: 0;
+.remove {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: .15em;
+    color: #D5D4D8;    
 }
 
-header > p {
-    margin-top: 0;
-    margin-bottom: 50px;
-    
-}
-
-
-
-
-/*=================
-    Main Content
-==================*/
-.container {
-    background: #1F2937;
-    height: 719px;
-    width: 550px;
-    padding: 38px;
-    display: inline-block;
-
-
-}
-
+/*====================
+   Service Button Row
+=====================*/
 .tasks {
     display: flex;
     flex-direction: row;
@@ -96,32 +111,41 @@ header > p {
     height: 45px;
     left: 38px;
     top: 231px;
-    background: #D1D4F4;
-    color: #4A4E74;
+    background: #4A4E74;
+    color: #F2F2F2; 
     border: none;
     border-radius: 7px;   
     margin: 0px 10px 50px 10px;
 }
 
-.btn:hover {
+.btn:hover, .btn:focus {
     border: solid 3px #ffffff;
     cursor: pointer;
 }
 
+.btn:disabled {
+    background: #8989B3;
+    border: none;
+}
+
+/*=================
+   Services Array
+==================*/
+
 #task, #notes {
     text-align: left;
     float: left;
-
-}
-
-.line {
-    margin: 45px 0 15px 0;
 }
 
 #total, #total-amount {
     text-align: right;
-       
+    margin-bottom: 24px;      
 }
+
+.line {
+    margin: 30px 0 15px 0;
+}
+
 
 #invoiceTotal {
     text-align: right;
@@ -139,9 +163,41 @@ header > p {
     height: 44px;
     left: 38px;
     top: 535px;
-
     background: #3A69D2;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
     border: none;
     border-radius: 7px;
 }
+
+.btn-send:hover,.btn-send:focus {
+    border: solid 3px #ffffff;
+    cursor: pointer;
+}
+
+/*==========================
+   JS DIV of Added Services
+=============================*/
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px auto;
+}
+
+#taskEl {
+    float: left;
+}
+
+#totalEl {
+    float: right;
+}
+
+.remove {
+    margin-left: 20px;
+}
+
+.remove:hover, .remove:focus {
+    font-weight: bold;
+    cursor: pointer;
+}
+

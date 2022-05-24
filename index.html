@@ -12,25 +12,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header>
-      <h1>Invoice Creator</h1>
-      <p>Thanks for choosing GoodCorp, LLC!</p>
-    </header>
-    <main id="main-content" class="container">
-      <div id="tasks" name="tasks" class="tasks">
-        <button id="btn-car" class="btn">Wash Car: $10</button>
-        <button id="btn-lawn" class="btn">Mow Lawn: $20</button>
-        <button id="btn-weeds" class="btn">Pull Weeds: $30</button>
-      </div>
-        <h3 id="task">task</h3>
-        <h3 id="total">total</h3>
-      <hr class="line">
-        <h3 id="notes">notes</h3>
-        <h3 id="total-amount">total amount</h3>
-        <h4 id="invoiceTotal">$0</h4>
-        <button id="btn-send" class="btn-send">
-          <i class="fa fa-envelope"></i>Send invoice</button>
-    </main>
+    <div class="invoice-container">
+        <header>
+        <h1>Invoice Creator</h1>
+        <p>Thanks for choosing GoodCorp, LLC!</p>
+        </header>
+        
+        <main id="main-content" class="container">
+        <div id="tasks" name="tasks" class="tasks">
+            <button id="btn-car" class="btn">Wash Car: $10</button>
+            <button id="btn-lawn" class="btn">Mow Lawn: $20</button>
+            <button id="btn-weeds" class="btn">Pull Weeds: $30</button>
+        </div>
+            <h3 id="task">task</h3>
+            <h3 id="total">total</h3>
+            <div id="services-container" class="services-container"></div>
+        <hr class="line">
+            <h3 id="notes">notes</h3>
+            <h3 id="total-amount">total amount</h3>
+            <h4 id="invoiceTotal">$ 0</h4>
+            <button id="btn-send" class="btn-send">
+                <i class="fa fa-envelope"></i>Send invoice</button>
+        </main>
+    </div>
 	<script src="index.js"></script>
   </body>
 </html>
