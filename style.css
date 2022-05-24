@@ -4,14 +4,14 @@
     box-sizing: border-box;
 }
 
-/*===============
-   Sections
-================*/
+/*=====================
+   Sections/Containers
+======================*/
 
 body {
     margin: 0 auto;
     color: #ffffff;
-    background: #293649;  
+    background: #293649;
 }
 
 .invoice-container {
@@ -38,16 +38,26 @@ header {
     margin-bottom: 38px;
 }
 
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px auto;
+}
+
+.less-margin {
+    margin-top: 0;
+}
+
 /*===============
    Typography
 ================*/
 
-h1,h2, h3, h4, p, span, button {
+h1, h2, h3, h4, p, span, button {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     text-align: center;
     letter-spacing: -0.02em;
-    color: #FFFFFF;
 }
 
 header > h1, p {
@@ -58,12 +68,14 @@ h1 {
     font-weight: 800;
     font-size: 40px;
     line-height: 40px;
+    color: #FFFFFF;
 }
 
 h2 {
     font-weight: 700;
     font-size: 20px;
     line-height: 20px;
+    color: #F5F5F5;
 }
 
 h3 {
@@ -83,16 +95,20 @@ h4 {
 
 p {
     font-weight: 400;
-    font-size: 16px;
-    line-height: 28px;
+    font-size: 12px;
+    color: #F5F5F5;
 }
 
 .remove {
     font-size: 10px;
     font-weight: 400;
     line-height: 20px;
-    letter-spacing: .15em;
     color: #D5D4D8;    
+}
+
+.less {
+    font-weight: 100;
+    color: #D5D4D8;
 }
 
 /*====================
@@ -124,32 +140,17 @@ p {
 }
 
 .btn:disabled {
-    background: #8989B3;
-    border: none;
+    background: #D1D4F4;
+    color: #4A4E74;
+    cursor: default;
 }
 
 /*=================
    Services Array
 ==================*/
 
-#task, #notes {
-    text-align: left;
-    float: left;
-}
-
-#total, #total-amount {
-    text-align: right;
-    margin-bottom: 24px;      
-}
-
 .line {
     margin: 30px 0 15px 0;
-}
-
-
-#invoiceTotal {
-    text-align: right;
-    margin: 15px 0 60px 0;
 }
 
 .btn-send {
@@ -158,6 +159,7 @@ p {
     justify-content: center;
     align-items: center;
     padding: 9px 17px 9px 15px;
+    margin-top: 60px;
     gap: 12px;
     width: 473px;
     height: 44px;
@@ -167,6 +169,7 @@ p {
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
     border: none;
     border-radius: 7px;
+    color: #FFFFFF;
 }
 
 .btn-send:hover,.btn-send:focus {
@@ -177,21 +180,6 @@ p {
 /*==========================
    JS DIV of Added Services
 =============================*/
-.flex-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 20px auto;
-}
-
-#taskEl {
-    float: left;
-}
-
-#totalEl {
-    float: right;
-}
-
 .remove {
     margin-left: 20px;
 }
@@ -200,4 +188,14 @@ p {
     font-weight: bold;
     cursor: pointer;
 }
+
+#terms {
+    margin-left: 0;
+    align-self: flex-start;
+}
+
+#invoiceTotal {
+    align-self: flex-end;    
+}
+
 

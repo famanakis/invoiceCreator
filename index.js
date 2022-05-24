@@ -7,6 +7,7 @@ const btnSendInvoice = document.getElementById("btn-send");
 const invoiceContainer = document.getElementById("services-container");
 const taskEl = document.getElementById("taskEl");
 const totalEl = document.getElementById("totalEl");
+const termsEl = document.getElementById("terms");
 const invoiceTotal = document.getElementById("invoiceTotal");
 //Variables and Arrays//
 const serviceArray = [];
@@ -21,9 +22,11 @@ btnCar.addEventListener("click", function() {
     invoice +=10;
     invoiceContainer.innerHTML += `
         <div class="flex-container" id="car">
-        <h2 id="taskEl">Wash Car<span class="remove" onclick="removeCar()">Remove</span></h2>
-        <h2 id="totalEl">$ 10</h2>
+        <h2 id="taskEl">Wash Car<span class="remove less-margin" onclick="removeCar()">Remove</span></h2>
+        <h2 id="totalEl" class="less-margin"><span class="less">$</span> 10</h2>
         </div>`;
+    termsEl.innerHTML = `
+        <p>We accept cash, credit card or Paypal</p>`;
     renderTotalAmount();
     btnCar.disabled = true; 
 });
@@ -36,8 +39,10 @@ btnLawn.addEventListener("click", function() {
     invoiceContainer.innerHTML += `
         <div class="flex-container" id="mow">
         <h2 id="taskEl">Mow Lawn<span class="remove" onclick="removeLawn()">Remove</span></h2>
-        <h2 id="totalEl">$ 20</h2>
+        <h2 id="totalEl" class="less-margin"><span class="less">$</span> 20</h2>
         </div>`;
+    termsEl.innerHTML = `
+        <p>We accept cash, credit card or Paypal</p>`;
     renderTotalAmount();
     btnLawn.disabled = true;
 });
@@ -50,8 +55,10 @@ btnWeeds.addEventListener("click", function() {
     invoiceContainer.innerHTML += `
         <div class="flex-container" id="pull">
         <h2 id="taskEl">Pull Weeds<span class="remove" onclick="removeWeeds()">Remove</span></h2>
-        <h2 id="totalEl">$ 30</h2>
+        <h2 id="totalEl" class="less-margin"><span class="less">$</span> 30</h2>
         </div>`;
+    termsEl.innerHTML = `
+        <p>We accept cash, credit card or Paypal</p>`;
     renderTotalAmount();
     btnWeeds.disabled = true;
 });
@@ -60,6 +67,7 @@ btnWeeds.addEventListener("click", function() {
 function renderTotalAmount() {
     invoiceTotal.innerText = "$ " + invoice;
     };
+
 
 //Send Button - currently reloads the page
 btnSendInvoice.addEventListener("click", 
@@ -88,6 +96,10 @@ function removeCar() {
         if (serviceArray[k] === "Wash Car") {
             serviceArray.splice(k,1);
         }
+        if (serviceArray.length === 0) {
+            termsEl.innerHTML = `
+            <p></p>`; 
+        }
     };    
 };
 
@@ -106,6 +118,10 @@ function removeLawn() {
     for (let k=0; k<serviceArray.length; k++) {
         if (serviceArray[k] === "Mow Lawn") {
             serviceArray.splice(k,1);
+        }
+        if (serviceArray.length === 0) {
+            termsEl.innerHTML = `
+            <p></p>`; 
         }
     };    
 };
@@ -126,6 +142,11 @@ function removeWeeds() {
         if (serviceArray[k] === "Pull Weeds") {
             serviceArray.splice(k,1);
         }
+        if (serviceArray.length === 0) {
+            termsEl.innerHTML = `
+            <p></p>`; 
+        }
     };    
 };
+ 
  
